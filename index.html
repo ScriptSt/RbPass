@@ -1,52 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Roblox Pass Store</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Roblox Pass Shop</title>
+  <link rel="stylesheet" href="css/styles.css">
 </head>
 <body>
-    <header>
-        <div class="header-container">
-            <h1>Roblox Pass Store</h1>
-            <button id="theme-toggle">🌙</button>
-        </div>
-        <div class="login-container">
-            <button id="login-btn">Вход</button>
-        </div>
-    </header>
-    
-    <main>
-        <h2>Выберите игру</h2>
-        <div class="games-container">
-            <!-- Список игр -->
-            <div class="game-card">
-                <img src="https://placehold.co/200" alt="Game 1">
-                <a href="game1.html">Игра 1</a>
-            </div>
-            <div class="game-card">
-                <img src="https://placehold.co/200" alt="Game 2">
-                <a href="game2.html">Игра 2</a>
-            </div>
-            <div class="game-card">
-                <img src="https://placehold.co/200" alt="Game 3">
-                <a href="game3.html">Игра 3</a>
-            </div>
-            <!-- Добавьте ещё 4 игры -->
-        </div>
-    </main>
-
-    <div id="login-modal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h2>Вход</h2>
-            <label for="roblox-username">Введите ник в Roblox:</label>
-            <input type="text" id="roblox-username" placeholder="Ваш ник">
-            <button id="save-username">Сохранить</button>
-        </div>
+  <header>
+    <div class="navbar">
+      <h1>Roblox Pass Shop</h1>
+      <button id="theme-toggle">Switch Theme</button>
     </div>
+  </header>
 
-    <script src="script.js"></script>
+  <section class="user-profile">
+    <h2>Welcome!</h2>
+    <p>Enter your Roblox username:</p>
+    <input type="text" id="username-input" placeholder="Your Roblox username">
+    <button id="save-username">Save</button>
+    <p id="saved-username"></p>
+  </section>
+
+  <main>
+    <h2>Available Games</h2>
+    <div class="game-list">
+      <a href="game1.html"><img src="images/game1.jpg" alt="Game 1"></a>
+      <a href="game2.html"><img src="images/game2.jpg" alt="Game 2"></a>
+      <a href="game3.html"><img src="images/game3.jpg" alt="Game 3"></a>
+      <a href="game4.html"><img src="images/game4.jpg" alt="Game 4"></a>
+      <a href="game5.html"><img src="images/game5.jpg" alt="Game 5"></a>
+      <a href="game6.html"><img src="images/game6.jpg" alt="Game 6"></a>
+      <a href="game7.html"><img src="images/game7.jpg" alt="Game 7"></a>
+    </div>
+  </main>
+
+  <script src="js/script.js"></script>
 </body>
 </html>
