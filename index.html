@@ -1,40 +1,154 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Roblox Pass Shop</title>
-  <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-  <header>
-    <div class="navbar">
-      <h1>Roblox Pass Shop</h1>
-      <button id="theme-toggle">Switch Theme</button>
-    </div>
-  </header>
+/* Общее оформление */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
-  <section class="user-profile">
-    <h2>Welcome!</h2>
-    <p>Enter your Roblox username:</p>
-    <input type="text" id="username-input" placeholder="Your Roblox username">
-    <button id="save-username">Save</button>
-    <p id="saved-username"></p>
-  </section>
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+}
 
-  <main>
-    <h2>Available Games</h2>
-    <div class="game-list">
-      <a href="game1.html"><img src="images/game1.jpg" alt="Game 1"></a>
-      <a href="game2.html"><img src="images/game2.jpg" alt="Game 2"></a>
-      <a href="game3.html"><img src="images/game3.jpg" alt="Game 3"></a>
-      <a href="game4.html"><img src="images/game4.jpg" alt="Game 4"></a>
-      <a href="game5.html"><img src="images/game5.jpg" alt="Game 5"></a>
-      <a href="game6.html"><img src="images/game6.jpg" alt="Game 6"></a>
-      <a href="game7.html"><img src="images/game7.jpg" alt="Game 7"></a>
-    </div>
-  </main>
+#rbPassTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;  /* Белое мигающее сияние, уменьшена интенсивность */
+    animation: glow 2s ease-in-out infinite alternate;
+}
 
-  <script src="js/script.js"></script>
-</body>
-</html>
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+    }
+}
+
+.user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+#nicknameDisplay {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#userNicknameIcon {
+    margin-right: 10px;
+}
+
+.btn {
+    padding: 12px 20px;
+    background-color: #444;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin-top: 20px;
+}
+
+.btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+}
+
+.menu {
+    display: none;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    transition: all 0.3s ease-in-out;
+}
+
+.menu-content {
+    padding: 20px;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #888;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.show {
+    display: block;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+#changeAccountMenu, #enterNicknameMenu {
+    padding: 20px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#nicknameDisplay {
+    font-size: 1.3rem;
+}
+
+#userNickname {
+    font-weight: bold;
+    color: #fff;
+}
+
+/* Стили для кнопок "Открыть магазин" и "Изменить аккаунт" */
+#openStoreBtn, #changeAccountBtn {
+    margin-left: 10px;
+}
+
+/* Стили для кнопки назад */
+#backBtn, #backBtnEnter {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 20px;
+}
+
+/* Скрытие кнопки "Изменить аккаунт" и текста "Ник не выбран" если ник не выбран */
+#changeAccountBtn, #nicknameDisplay {
+    display: none;
+}
