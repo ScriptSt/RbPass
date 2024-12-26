@@ -1,59 +1,59 @@
+:root {
+  --bg-color: #ffffff;
+  --text-color: #000000;
+  --button-bg: #007bff;
+  --button-text: #ffffff;
+}
+
+body.dark-mode {
+  --bg-color: #121212;
+  --text-color: #ffffff;
+  --button-bg: #444444;
+}
+
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    transition: background-color 0.3s, color 0.3s;
+  background-color: var(--bg-color);
+  color: var(--text-color);
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
 }
 
 header {
-    display: flex;
-    justify-content: space-between;
-    padding: 10px 20px;
-    background-color: #0088cc;
-    color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: var(--button-bg);
+  padding: 10px;
+  color: var(--button-text);
 }
 
-.games-list {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 20px;
-    padding: 20px;
+button {
+  background-color: var(--button-bg);
+  color: var(--button-text);
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
-.games-list img {
-    width: 100%;
-    border-radius: 10px;
-    transition: transform 0.3s;
+button:hover {
+  opacity: 0.8;
 }
 
-.games-list img:hover {
-    transform: scale(1.05);
+.game-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  gap: 20px;
+  padding: 20px;
 }
 
-.modal {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: rgba(0, 0, 0, 0.5);
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.game-list img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px;
 }
 
-.modal.hidden {
-    display: none;
-}
-
-.modal-content {
-    background: white;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-}
-
-.dark-mode {
-    background-color: #121212;
-    color: #e0e0e0;
+.user-profile {
+  padding: 20px;
 }
