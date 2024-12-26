@@ -1,0 +1,153 @@
+/* Общее оформление */
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #121212;
+    color: #fff;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    text-align: center;
+    position: relative; /* Для того, чтобы меню располагалось поверх */
+}
+
+/* Заголовок магазина */
+#rbPassTitle {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    font-weight: 700;
+    color: #fff;
+    text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;  /* Белое мигающее сияние */
+    animation: glow 2s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    0% {
+        text-shadow: 0 0 5px #fff, 0 0 10px #fff, 0 0 15px #fff;
+    }
+    100% {
+        text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #fff;
+    }
+}
+
+/* Информация о пользователе */
+.user-info {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 10px;
+    position: relative;
+    z-index: 2; /* Чтобы ник был ближе к верхней части */
+}
+
+/* Ник пользователя (позиционирование ниже заголовка) */
+#nicknameDisplay {
+    font-size: 1.2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: -20px; /* Опускаем ник ниже */
+    margin-bottom: 20px; /* Расстояние между ником и кнопками */
+    z-index: 1; /* Этот элемент будет ниже меню */
+}
+
+#userNicknameIcon {
+    margin-right: 10px;
+}
+
+/* Кнопки на главной странице */
+.btn {
+    padding: 12px 20px;
+    background-color: #121212;
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    margin: 10px 8px; /* Отступы между кнопками */
+    box-shadow: 0 0 10px #fff; /* Добавлено сияние */
+}
+
+.btn:hover {
+    background-color: #555;
+    transform: translateY(-2px);
+    box-shadow: 0 0 20px #fff; /* Сияние при наведении */
+}
+
+/* Меню ввода ника */
+.menu {
+    display: none;
+    background-color: #2c2c2c;
+    border-radius: 10px;
+    padding: 30px;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+    position: absolute;
+    top: 50%; /* Центрирование */
+    left: 52%;
+    transform: translate(-50%, -50%); /* Центрирование по обеим осям */
+    z-index: 3; /* Меню должно быть выше остальных элементов */
+    width: 80%;
+}
+
+.menu-content {
+    padding: 20px;
+}
+
+/* Кнопка подтверждения ника в меню */
+#confirmNicknameBtn {
+    background-color: #444;
+    border: 1px solid #666;
+}
+
+#confirmNicknameBtn:hover {
+    background-color: #666;
+    box-shadow: 0 0 10px #888;
+}
+
+input {
+    width: 80%;
+    padding: 10px;
+    background-color: #444;
+    border: 1px solid #666;
+    border-radius: 5px;
+    color: #fff;
+    margin: 10px 0;
+    font-size: 1rem;
+}
+
+input:focus {
+    outline: none;
+    border-color: #888;
+}
+
+.error {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 10px;
+    visibility: hidden;
+}
+
+.show {
+    display: block;
+}
+
+.back-btn {
+    background-color: transparent;
+    border: none;
+    color: #fff;
+    font-size: 1.2rem;
+    cursor: pointer;
+    margin-bottom: 10px; /* Поднята кнопка "Назад" */
+    position: absolute;
+    left: 10px; /* Придвинута кнопка назад к левой стороне */
+    top: 0; /* Поднята кнопка чуть выше */
+}
