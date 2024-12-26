@@ -1,37 +1,52 @@
 <!DOCTYPE html>
-<html lang="ru">
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Покупка пропусков</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            text-align: center;
-            padding: 20px;
-        }
-        h1 {
-            color: #555;
-        }
-        .button {
-            display: inline-block;
-            background-color: #4CAF50;
-            color: white;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 5px;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: #45a049;
-        }
-    </style>
+    <title>Roblox Pass Store</title>
+    <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <h1>Добро пожаловать!</h1>
-    <p>На этом сайте вы можете приобрести игровые пропуски.</p>
-    <a class="button" href="#buy">Купить пропуск</a>
+    <header>
+        <div class="header-container">
+            <h1>Roblox Pass Store</h1>
+            <button id="theme-toggle">🌙</button>
+        </div>
+        <div class="login-container">
+            <button id="login-btn">Вход</button>
+        </div>
+    </header>
+    
+    <main>
+        <h2>Выберите игру</h2>
+        <div class="games-container">
+            <!-- Список игр -->
+            <div class="game-card">
+                <img src="https://placehold.co/200" alt="Game 1">
+                <a href="game1.html">Игра 1</a>
+            </div>
+            <div class="game-card">
+                <img src="https://placehold.co/200" alt="Game 2">
+                <a href="game2.html">Игра 2</a>
+            </div>
+            <div class="game-card">
+                <img src="https://placehold.co/200" alt="Game 3">
+                <a href="game3.html">Игра 3</a>
+            </div>
+            <!-- Добавьте ещё 4 игры -->
+        </div>
+    </main>
+
+    <div id="login-modal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2>Вход</h2>
+            <label for="roblox-username">Введите ник в Roblox:</label>
+            <input type="text" id="roblox-username" placeholder="Ваш ник">
+            <button id="save-username">Сохранить</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
 </body>
 </html>
