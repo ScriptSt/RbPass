@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function () {
     document.getElementById('openStoreBtn').addEventListener('click', function () {
         if (!isMenuOpen()) {
             if (userNickname) {
-                window.location.href = 'store.html';  // Перенаправление на store.html
+                window.location.href = 'store';  // Перенаправление на store.html
             } else {
                 openNicknameMenu();
             }
