@@ -137,3 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
         }
     }, 1000);
 });
+
+// JS - Отключение копирования текста
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+});
