@@ -130,14 +130,9 @@ body {
     }
 }
 
-/* Убираем синюю заливку при нажатии */
-* {
-    -webkit-tap-highlight-color: transparent; /* Отключение эффекта на мобильных устройствах */
+/* Убираем стандартную синюю заливку при взаимодействии с элементами */
+*:focus, *:active {
+    outline: none !important; /* Убирает обводку */
+    box-shadow: none !important; /* Убирает тень */
+    background-color: transparent !important; /* Убирает заливку */
 }
-
-*:active {
-    background-color: transparent !important; /* Убираем цвет при нажатии */
-    color: inherit !important; /* Сохраняем цвет текста */
-}
-
-
