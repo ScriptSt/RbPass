@@ -129,3 +129,10 @@ body {
         opacity: 0;
     }
 }
+
+/* CSS - Отключение выделения и фокуса */
+* {
+    outline: none;
+    user-select: none;
+}
+
