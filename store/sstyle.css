@@ -130,9 +130,14 @@ body {
     }
 }
 
-/* CSS - Отключение выделения и фокуса */
+/* Убираем синюю заливку при нажатии */
 * {
-    outline: none;
-    user-select: none;
+    -webkit-tap-highlight-color: transparent; /* Отключение эффекта на мобильных устройствах */
 }
+
+*:active {
+    background-color: transparent !important; /* Убираем цвет при нажатии */
+    color: inherit !important; /* Сохраняем цвет текста */
+}
+
 
