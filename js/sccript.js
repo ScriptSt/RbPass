@@ -5,15 +5,16 @@ document.addEventListener('DOMContentLoaded', function () {
     updateNicknameDisplay();
 
     // Кнопка "Открыть магазин"
-    document.getElementById('openStoreBtn').addEventListener('click', function () {
-        if (!isMenuOpen()) {
-            if (userNickname) {
-                window.location.href = 'store';  // Перенаправление на store.html
-            } else {
-                openNicknameMenu();
-            }
+document.getElementById('openStoreBtn').addEventListener('click', function () {
+    if (!isMenuOpen()) {
+        if (userNickname) {
+            window.location.href = 'https://scriptst.github.io/RbPass/store/';  // Перенаправление на новый URL
+        } else {
+            openNicknameMenu();
         }
-    });
+    }
+});
+
 
     // Кнопка "Изменить аккаунт"
     document.getElementById('changeAccountBtn').addEventListener('click', function () {
