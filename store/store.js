@@ -15,17 +15,17 @@ document.addEventListener('DOMContentLoaded', function () {
             title: "Shindo Life",
             logo: "https://tr.rbxcdn.com/180DAY-26b2cce6b2dbbf203ff01105d05e7eb4/512/512/Image/Webp/noFilter",
             link: "https://scriptst.github.io/RbPass/ShindoLife"
-        }
+        },
         {
             title: "Anime Adventures",
             logo: "https://tr.rbxcdn.com/180DAY-a4dda77cbeb2a02523deb6c49ece2ce4/512/512/Image/Webp/noFilter",
             link: "https://scriptst.github.io/RbPass/AnimeAdventures"
-        }
+        },
         {
             title: "King Legacy",
             logo: "https://tr.rbxcdn.com/180DAY-92d9d99c07ff5a56ac4ab1e23914c7a8/512/512/Image/Webp/noFilter",
             link: "https://scriptst.github.io/RbPass/KingLegacy"
-        }
+        },
         {
             title: "Project Slayers",
             logo: "https://tr.rbxcdn.com/180DAY-f71e9da041d76bbc685d3035ed2e9a31/512/512/Image/Webp/noFilter",
