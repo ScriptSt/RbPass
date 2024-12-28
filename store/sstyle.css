@@ -130,10 +130,4 @@ body {
     }
 }
 
-/* Убираем стандартную синюю заливку при взаимодействии с элементами */
-*:focus, *:active {
-    outline: none !important; /* Убирает обводку */
-    box-shadow: none !important; /* Убирает тень */
-    background-color: transparent !important; /* Убирает заливку */
-}
 
