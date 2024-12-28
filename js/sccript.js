@@ -110,3 +110,85 @@ document.getElementById('openStoreBtn').addEventListener('click', function () {
         errorElement.style.visibility = 'hidden';
     }
 });
+
+document.addEventListener('DOMContentLoaded', function () {
+    const background = document.createElement('div');
+    background.classList.add('background-cubes');
+    document.body.appendChild(background);
+
+    const maxCubes = 10; // Максимальное количество кубов
+    const minCubes = 3; // Минимальное количество кубов
+    const minSize = 30; // Минимальный размер куба
+    const maxSize = 80; // Максимальный размер куба
+    let currentCubes = 0;
+
+    // Функция для создания нового куба
+    function createCube() {
+        const cube = document.createElement('div');
+        cube.classList.add('cube');
+
+        // Установка случайного размера
+        const size = Math.random() * (maxSize - minSize) + minSize;
+        cube.style.width = `${size}px`;
+        cube.style.height = `${size}px`;
+
+        // Установка случайного положения
+        setRandomPosition(cube);
+
+        // Установка случайной траектории
+        setRandomTrajectory(cube);
+
+        // Добавление случайной задержки для появления
+        cube.style.animationDelay = `${Math.random() * 5}s`;
+
+        background.appendChild(cube);
+        currentCubes++;
+
+        // Удаление куба после завершения анимации
+        cube.addEventListener('animationend', () => {
+            cube.remove();
+            currentCubes--;
+
+            // Создаем новый куб, если текущее количество меньше минимального
+            if (currentCubes < minCubes) {
+                createCube();
+            }
+        });
+    }
+
+    // Установка случайного положения
+    function setRandomPosition(cube) {
+        const width = window.innerWidth;
+        const height = window.innerHeight;
+
+        cube.style.left = `${Math.random() * width}px`;
+        cube.style.top = `${Math.random() * height}px`;
+    }
+
+    // Установка случайной траектории движения
+    function setRandomTrajectory(cube) {
+        const maxTrajectory = 60; // Максимальное отклонение в пикселях
+        const maxRotation = 30; // Максимальный угол поворота
+
+        cube.style.setProperty('--x-trajectory', `${Math.random() * maxTrajectory - maxTrajectory / 2}px`);
+        cube.style.setProperty('--y-trajectory', `${Math.random() * maxTrajectory - maxTrajectory / 2}px`);
+        cube.style.setProperty('--rotation', `${Math.random() * maxRotation - maxRotation / 2}deg`);
+    }
+
+    // Первоначальное создание кубов
+    for (let i = 0; i < maxCubes; i++) {
+        createCube();
+    }
+
+    // Проверка и добавление кубов, если их меньше минимального
+    setInterval(() => {
+        while (currentCubes < minCubes) {
+            createCube();
+        }
+    }, 1000);
+});
+
+// JS - Отключение копирования текста
+document.addEventListener('copy', function(e) {
+    e.preventDefault();
+});
